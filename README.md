@@ -14,6 +14,7 @@ npm install
 ```
 
 このようなファイル群が作成される。
+
 ```
 MyProject
 ├── src                   // place of your TypeScript code
@@ -29,13 +30,14 @@ MyProject
 ```
 
 ## データベースを作成しておく
-今回は、MySQLのデータベース名は、`local_db`とする。
+
+今回は、MySQL のデータベース名は、`local_db`とする。
 
 ```bash
 CREATE DATABASE local_db;
 ```
 
-ローカルのMySQLに接続できるように、データーベース名、ユーザー名、パスワードを設定する。
+ローカルの MySQL に接続できるように、データーベース名、ユーザー名、パスワードを設定する。
 
 ```ts
 import "reflect-metadata";
@@ -57,13 +59,14 @@ export const AppDataSource = new DataSource({
 });
 ```
 
-npm startを実行すると、`local_db`にORMで定義したテーブルが作成される。
+npm start を実行すると、`local_db`に ORM で定義したテーブルが作成される。
 
 ```bash
 npm start
 ```
 
 こんな感じです。
+
 ```
 mysql> show databases;
 +--------------------+
@@ -88,3 +91,28 @@ mysql> show tables;
 +--------------------+
 1 row in set (0.00 sec)
 ```
+
+## POSTMAN で動作確認
+
+HTTP GET する時は、`http://localhost:3000/users`にアクセスする。
+
+```
+http://localhost:3000/users
+```
+
+HTTP POST するときは、`http://localhost:3000/users`にアクセスする。
+
+```
+{
+  "firstName": "Jboy",
+  "lastName": "Hashimoto",
+  "age": 34
+}
+```
+
+
+**HTTP GET**
+<img src="image/get.png" alt="get" width="600">
+
+**HTTP POST**
+<img src="image/post.png" alt="get" width="600">
