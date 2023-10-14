@@ -1,6 +1,8 @@
 {
    "compilerOptions": {
+      "moduleResolution": "node",
       "esModuleInterop": true,
+      "isolatedModules": false,
     "allowSyntheticDefaultImports": true,
       "lib": [
          "es5",
@@ -8,7 +10,6 @@
       ],
       "target": "es5",
       "module": "commonjs",
-      "moduleResolution": "node",
       "outDir": "./build",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
